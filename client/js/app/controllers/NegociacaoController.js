@@ -11,7 +11,16 @@ class NegociacaoController {
     adiciona(event) {
         event.preventDefault()
     
-        let data = new Date(this._inputData.value.replace(/-/g, ','));
-        console.log(data)
+        let helper = new DateHelper()
+        let data = helper.textoParaData(this._inputData.value)
+
+        let negociacao = new Negociacao(
+            data,
+            this._inputQuantidade.value,
+            this._inputValor.value
+        )
+
+        console.log(negociacao)
+        console.log(helper.dataParaTexto(negociacao.data))
     }
 }
