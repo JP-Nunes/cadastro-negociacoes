@@ -11,6 +11,6 @@ class Mensagem {
     }
 
     set texto(texto) {
-        this.texto = texto
+        this._texto = texto
     }
 }
